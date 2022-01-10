@@ -53,6 +53,56 @@
         <!--------MAIN SECTION---------->
 <main class="flex-shrink-0">
         <div class="container">
+            <div class = "row">
+                <div class="col border mt-3">
+                    <h2>Input here</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="loanAmount">Loan Amount</label>
+                            <input type="number" class="form-control" id="loanAmount" placeholder="15000">
+                          </div>
+                          <div class="form-group">
+                            <label for="termAmount">Term (months)</label>
+                            <input type="number" class="form-control" id="termAmount" placeholder="60">
+                          </div>
+                          <div class="form-group">
+                            <label for="interestRate">Interest Rate</label>
+                            <input type="number" class="form-control" id="interestAmount" placeholder="6%">
+                          </div>
+                          <div> 
+                            <button id="btnSubmit" type="button" class="btn btn-dark brn-lg">Submit</button>
+                          </div>
+                    </form>
+                </div>
+                <div class="col border mt-3">
+                    <h2>Your Monthly Payments</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="loanAmount">Total Principle</label>
+                            
+                          </div>
+                          <div class="form-group">
+                            <label for="termAmount">Total Interest</label>
+                            
+                          </div>
+                          <div class="form-group">
+                            <label for="interestAmount">Total Cost</label>
+                            
+                          </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class = "row">
+                <div class="col-12 border">
+                    <h2>RESULTS</h2>
+                    <table class = "table table-striped table-sm">
+                        <tbody id="results">
+                        <!--results here-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
 
         </div>
 </main>
@@ -75,11 +125,25 @@
             </div>
         </div>
 </footer>
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
-</script>
-<script src="js/site.js"></script>
-</body>
 
+<!--Layout Template-->
+<template id="paymentsTemplate">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</template>
+
+<!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    <script src="js/site.js"></script>
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", getValues);
+    </script>
+</body>
 </html>
